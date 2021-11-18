@@ -43,3 +43,7 @@ RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-
 # RUN source $HOME/.poetry/env
 # above returns source not found
 RUN . /root/.poetry/env
+# above still not working right
+
+# ENTRYPOINT code-server --bind-addr 0.0.0.0 & ; cat /root/.config/code-server/config.yaml
+# above not working right
