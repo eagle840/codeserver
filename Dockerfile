@@ -40,5 +40,5 @@ ENV LANG=C.UTF-8
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-RUN source $HOME/.poetry/env
-
+# RUN source $HOME/.poetry/env
+# above returns source not found
