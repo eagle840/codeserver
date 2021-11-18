@@ -23,7 +23,7 @@ RUN apt-get install -y python3.8
 RUN apt-get -y install python3-pip
 
 #install azure cli 
-curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 # install terraform
 RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
