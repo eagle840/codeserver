@@ -25,10 +25,18 @@ RUN apt-get -y install python3-pip
 #install azure cli 
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
+#install aws cli
+RUN pip install awscli
+# to fix  a dependance problem with aws:
+RUN apt-get -y install groff   
+
+#install gcloud and gsutil
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /e>
+
 # install terraform
 RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
 RUN apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-RUN apt-get install -y terraform=0.14.7
+RUN apt-get install -y terraform
 
 
 
