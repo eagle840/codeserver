@@ -34,8 +34,8 @@ RUN apt-get -y install groff
 #next line is failing
 #RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /e>
 # next two line do install, but don't add to the path
-RUN curl https://sdk.cloud.google.com > install.sh
-RUN bash install.sh --disable-prompts
+#RUN curl https://sdk.cloud.google.com > install.sh
+#RUN bash install.sh --disable-prompts
 
 
 # install terraform
@@ -44,7 +44,17 @@ RUN apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.rele
 RUN apt-get install -y terraform
 
 
+# install gcloud
+# Downloading gcloud package
+RUN curl https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz > /tmp/google-cloud-sdk.tar.gz
 
+# Installing the package
+RUN mkdir -p /usr/local/gcloud \
+  && tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz \
+  && /usr/local/gcloud/google-cloud-sdk/install.sh
+
+# Adding the package path to local
+ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
 
 # install poetrty
