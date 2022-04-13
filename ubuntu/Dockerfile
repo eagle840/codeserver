@@ -31,7 +31,12 @@ RUN pip install awscli
 RUN apt-get -y install groff   
 
 #install gcloud and gsutil
-RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /e>
+#next line is failing
+#RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /e>
+# next two line do install, but don't add to the path
+RUN curl https://sdk.cloud.google.com > install.sh
+RUN bash install.sh --disable-prompts
+
 
 # install terraform
 RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
