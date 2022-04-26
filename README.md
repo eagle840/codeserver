@@ -1,6 +1,15 @@
 # codeserver
 Python running with codeserver
 
+A development docker container, with  a 'codeserver' web interface.
+
+  - python 
+  - aws cli
+  - gcloud and gsutil
+  - azure cli
+  - terraform
+  
+
 
 
 # to run

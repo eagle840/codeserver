@@ -1,8 +1,6 @@
 FROM ubuntu:20.04
-RUN uname -a
 RUN apt-get update
-RUN apt-get install -y  curl wget
-RUN apt-get install -y nano
+RUN apt-get install -y curl wget jq tree nano git
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 WORKDIR /src
 
@@ -12,7 +10,7 @@ RUN dpkg -i packages-microsoft-prod.deb
 RUN  apt-get install -y apt-transport-https
 RUN  apt-get update
 RUN  apt-get install -y dotnet-sdk-5.0
-RUN apt-get install -y git
+
 
 #install python
 ENV DEBIAN_FRONTEND=noninteractive
