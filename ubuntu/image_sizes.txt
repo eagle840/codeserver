@@ -1,0 +1,11 @@
+$ docker images
+REPOSITORY                 TAG                 IMAGE ID            CREATED             SIZE
+csgcp                      latest              7c8318666c1d        56 seconds ago      3.82GB
+cstf                       latest              877af7c0d7f0        3 minutes ago       2.88GB
+csaws                      latest              2d769db7f456        3 minutes ago       2.8GB
+csazure                    latest              06295e5cb9ef        6 minutes ago       2.59GB
+cspython                   latest              930acfe2c769        10 minutes ago      1.52GB
+csdotnet                   latest              f48ea439b163        12 minutes ago      1.2GB
+cscs                       latest              2b23e8c33fa2        13 minutes ago      768MB
+csubuntu                   latest              c002386d3b50        14 minutes ago      213MB
+ubuntu                     20.04               1a437e363abf        4 days ago          72.8MB
