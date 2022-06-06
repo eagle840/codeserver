@@ -28,6 +28,10 @@ To pull the password:
 
 OR inside the container:
 `cat /root/.config/code-server/config.yaml`
+ 
+# to build
+  
+  the docker image is built with github actions,   see https://docs.github.com/en/actions/publishing-packages/publishing-docker-images
 
   
   
