@@ -22,7 +22,8 @@ jobs:
       run: docker login
   
     - name: Build the Docker image
-      run: docker build . --file ./ubuntu/Dockerfile --tag codeserver:$(date +%s)
+      # run: docker build . --file ./ubuntu/Dockerfile --tag codeserver:$(date +%s)
+      run: docker build . --file ./ubuntu/Dockerfile --tag codeserver
       
     - name: Push to DockerHub
-      run: docker push codeserver:$(date +%s)
+      run: docker push codeserver
