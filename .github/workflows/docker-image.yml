@@ -30,4 +30,8 @@ jobs:
       run: docker tag codeserver eagle840/e8codeserver
       
     - name: Push to DockerHub
+      env:
+        DockerUserName: ${{ secrets.DOCKER_USERNAME }}
+        DockerPassword: ${{ secrets.DOCKER_PASSWORD }}
+      run: docker login
       run: docker push eagle840/e8codeserver
