@@ -25,5 +25,9 @@ jobs:
       # run: docker build . --file ./ubuntu/Dockerfile --tag codeserver:$(date +%s)
       run: docker build . --file ./ubuntu/Dockerfile --tag codeserver
       
+    - name: Tag image
+      # tag the image for upload
+      run: docker tag codeserver eagle840/e8codeserver
+      
     - name: Push to DockerHub
-      run: docker push codeserver
+      run: docker push eagle840/e8codeserver
