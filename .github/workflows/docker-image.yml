@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
+    
+      - uses: actions/checkout@v3
+    
       - name: man docker login
         env:
           DockerUserName: ${{ secrets.DOCKER_USERNAME }}
