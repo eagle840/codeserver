@@ -6,29 +6,29 @@ on:
   pull_request:
     branches: [ "main" ]
 
-
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
+
     steps:
-    
-    
-      - uses: actions/checkout@v3
-    
-      - name: man docker login
-        env:
-          DockerUserName: ${{ secrets.DOCKER_USERNAME }}
-          DockerPassword: ${{ secrets.DOCKER_PASSWORD }}
-        run: docker login
-
-
-      - name: Build the Docker image
-        # run: docker build . --file ./ubuntu/Dockerfile --tag codeserver:$(date +%s)
-        run: docker build . --file ./ubuntu/Dockerfile --tag codeserver
+    - uses: actions/checkout@v3
+        
+    - name: manual docker login
+      env:
+        DockerUserName: ${{ secrets.DOCKER_USERNAME }}
+        DockerPassword: ${{ secrets.DOCKER_PASSWORD }}
+      run: docker login
+  
+    - name: Build the Docker image
+      # run: docker build . --file ./ubuntu/Dockerfile --tag codeserver:$(date +%s)
+      run: docker build . --file ./ubuntu/Dockerfile --tag codeserver
       
-      - name: Tag image
-        # tag the image for upload
-        run: docker tag codeserver eagle840/e8codeserver
+    - name: Tag image
+      # tag the image for upload
+      run: docker tag codeserver eagle840/e8codeserver:lastest
+      
       
     - name: Push to DockerHub
       run: docker push eagle840/e8codeserver:latest
