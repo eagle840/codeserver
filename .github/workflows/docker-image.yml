@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     
-      - name: Set env's
+      - name: man docker login
         env:
           DockerUserName: ${{ secrets.DOCKER_USERNAME }}
           DockerPassword: ${{ secrets.DOCKER_PASSWORD }}
-          run: docker login
+        run: docker login
 
       -
         name: Set up Docker Buildx
