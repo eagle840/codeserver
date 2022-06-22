@@ -11,6 +11,11 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+    
+      - name: Set env's
+        env:
+          DockerUserName: ${{ secrets.DOCKER_USERNAME }}
+          DockerPassword: ${{ secrets.DOCKER_PASSWORD }}
 
       -
         name: Set up Docker Buildx
