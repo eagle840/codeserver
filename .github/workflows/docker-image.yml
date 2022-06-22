@@ -30,9 +30,5 @@ jobs:
         # tag the image for upload
         run: docker tag codeserver eagle840/e8codeserver
       
-      -
-        name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: eagle840/e8codeserver:latest
+    - name: Push to DockerHub
+      run: docker push eagle840/e8codeserver:latest
