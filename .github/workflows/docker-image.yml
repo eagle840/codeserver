@@ -21,9 +21,14 @@ jobs:
           DockerPassword: ${{ secrets.DOCKER_PASSWORD }}
         run: docker login
 
-      -
-        name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+
+      - name: Build the Docker image
+        # run: docker build . --file ./ubuntu/Dockerfile --tag codeserver:$(date +%s)
+        run: docker build . --file ./ubuntu/Dockerfile --tag codeserver
+      
+      - name: Tag image
+        # tag the image for upload
+        run: docker tag codeserver eagle840/e8codeserver
       
       -
         name: Build and push
