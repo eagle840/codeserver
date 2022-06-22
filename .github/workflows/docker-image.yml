@@ -31,4 +31,4 @@ jobs:
       
       
     - name: Push to DockerHub
-      run: docker login docker.io ; docker push eagle840/e8codeserver:latest
+      run: docker login docker.io --username eagle840 ; docker push eagle840/e8codeserver:latest
