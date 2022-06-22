@@ -32,5 +32,5 @@ jobs:
       
     - name: Push to DockerHub
       run: |
-        docker login -D
+        docker login
         docker push -D docker.io/eagle840/e8codeserver:latest
