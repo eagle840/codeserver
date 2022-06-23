@@ -8,6 +8,13 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+    
+      - name: manual docker login
+        env:
+          DockerUserName: ${{ secrets.DOCKER_USERNAME }}
+          DockerPassword: ${{ secrets.DOCKER_PASSWORD }}
+        run: docker login docker.io
+        
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
