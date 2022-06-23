@@ -24,10 +24,10 @@ jobs:
   
     - name: Tag image
       # tag the image for upload
-      run: docker tag bullseye:latest eagle840/alpine:latest
+      run: docker tag bullseye:latest eagle840/bullseye:latest
       
       
     - name: Push to DockerHub
       run: |
         docker login
-        docker push  docker.io/eagle840/alpine:latest
+        docker push  docker.io/eagle840/bullseye:latest
