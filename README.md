@@ -44,6 +44,7 @@ OR inside the container:
   - open the project in GCP and got settings, and then service accounts, KEYS tabs, and create a new json authN file
   - copy to folder
   - gcloud auth activate-service-account --key-file my_service_account.json
+  - for Terraform, in the google provider, add a credentials = "file.json" KV pair
  
 
   
