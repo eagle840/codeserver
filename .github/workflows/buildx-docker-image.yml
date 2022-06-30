@@ -26,10 +26,12 @@ jobs:
         uses: docker/login-action@v2
         with:
           registry: docker.io
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-     
-      - name: manual docker login
+          # username: ${{ secrets.DOCKER_USERNAME }}
+          DockerUserName: ${{ secrets.DOCKER_USERNAME }}
+          # password: ${{ secrets.DOCKER_PASSWORD }}
+          DockerPassword: ${{ secrets.DOCKER_PASSWORD }}
+      - 
+        name: manual docker login
         env:
           DockerUserName: ${{ secrets.DOCKER_USERNAME }}
           DockerPassword: ${{ secrets.DOCKER_PASSWORD }}
