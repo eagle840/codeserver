@@ -35,6 +35,16 @@ To pull the password:
 
 OR inside the container:
 `cat /root/.config/code-server/config.yaml`
+  
+## notes
+  
+  ### Goole gcloud
+  
+  to setup authN for a project
+  - open the project in GCP and got settings, and then service accounts, KEYS tabs, and create a new json authN file
+  - copy to folder
+  - gcloud auth activate-service-account --key-file my_service_account.json
+ 
 
   
   
