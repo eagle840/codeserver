@@ -9,10 +9,10 @@ jobs:
 
       
   docker:
+    runs-on: ubuntu-latest
     secrets:
       username: ${{ secrets.DOCKERHUB_USERNAME }}
       password: ${{ secrets.DOCKERHUB_PASSWORD }}
-    runs-on: ubuntu-latest
     steps:
     
       - name: manual docker login
