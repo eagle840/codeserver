@@ -21,6 +21,13 @@ jobs:
         DockerUserName: ${{ secrets.DOCKER_USERNAME }}
         DockerPassword: ${{ secrets.DOCKER_PASSWORD }}
       run: docker login docker.io
+      
+      
+    - name: Build & Push Image
+      run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "eagle840" --password-stdin
+          docker image build -t eagle840/codeserver:v1 .
+          docker push eagle840/codeserver:v1
   
     - name: Build the Docker image
       # run: docker build . --file ./ubuntu/Dockerfile --tag codeserver:$(date +%s)
