@@ -1,4 +1,5 @@
 FROM python
+
 RUN apt-get update
 RUN apt-get install -y curl wget jq tree nano git unzip
 RUN curl -fsSL https://code-server.dev/install.sh | sh
@@ -49,8 +50,8 @@ RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/s
   && chmod 700 get_helm.sh \
   && ./get_helm.sh \
   && helm version
-
-
+  
+LABEL maintainer="eagle840 <eagle840@gmail.com>"  version="1.1"
 
 # ENTRYPOINT code-server --bind-addr 0.0.0.0 & ; cat /root/.config/code-server/config.yaml
 # above not working right
