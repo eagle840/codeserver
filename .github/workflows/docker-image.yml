@@ -26,19 +26,19 @@ jobs:
     - name: Build & Push Image
       run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | docker login docker.io -u "eagle840" --password-stdin
-          docker image build -t eagle840/codeserver:v1 .
-          docker push eagle840/codeserver:v1
+          docker image build -t eagle840/de8codeserver:v1 .
+          docker push eagle840/de8codeserver:v1
   
-    - name: Build the Docker image
-      # run: docker build . --file ./ubuntu/Dockerfile --tag codeserver:$(date +%s)
-      run: docker build . --file ./ubuntu/Dockerfile --tag codeserver
+#     - name: Build the Docker image
+#       # run: docker build . --file ./ubuntu/Dockerfile --tag codeserver:$(date +%s)
+#       run: docker build . --file ./ubuntu/Dockerfile --tag codeserver
       
-    - name: Tag image
-      # tag the image for upload
-      run: docker tag codeserver eagle840/e8codeserver:latest
+#     - name: Tag image
+#       # tag the image for upload
+#       run: docker tag codeserver eagle840/e8codeserver:latest
       
       
-    - name: Push to DockerHub
-      run: |
-        docker login
-        docker push  docker.io/eagle840/e8codeserver:latest
+#     - name: Push to DockerHub
+#       run: |
+#         docker login
+#         docker push  docker.io/eagle840/e8codeserver:latest
