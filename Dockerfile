@@ -30,9 +30,9 @@ RUN apt-get -y install groff
 # install terraform
 # RUN wget -q https://releases.hashicorp.com/terraform/1.1.9/terraform_1.1.9_linux_amd64.zip
 # RUN unzip terraform_1.1.9_linux_amd64.zip && mv ./terraform /usr/local/bin/ 
-RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
 RUN apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-RUN apt install terraform
+RUN apt install -y terraform
 RUN terraform -install-autocomplete
 
 # install gcloud/sutil
