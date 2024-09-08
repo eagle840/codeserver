@@ -1,5 +1,5 @@
 
-FROM alpine:3.15.4
+FROM alpine:3.19.4
 #FROM ubuntu
 RUN apk update
 RUN apk add curl wget
